@@ -21,18 +21,14 @@ void join(int x, int y){
    
    //analyze distance array to choice the best dad 
    //and upgrade amount array
-   if(dist[x]<dist[y]){
-      dad[x]=y;
-      amount[y]+=amount[x];
-   }
    if(dist[x]>dist[y]){
-      dad[y]=x;
-      amount[x]+=amount[y];
+       swap(x,y);
    }
+   dad[x]=y;
+   amount[y]+=amount[x];
+
    if(dist[x]==dist[y]){
-      dad[x]=y;
-      dist[y]++;
-      amount[y]+=amount[x];
+       dist[y]++;
    }
 
 }
