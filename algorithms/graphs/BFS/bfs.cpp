@@ -24,12 +24,12 @@ int main(){
    vector <bool> processed(vertice+1);
    queue <int> queueGraph;
    queueGraph.push(source);
+   processed[source]=true;
 
    cout << source << " ";
    while(!queueGraph.empty()){
       int dad = queueGraph.front();
       queueGraph.pop();
-      processed[dad]=true;
 
       for(auto son : graph[dad]){
 
@@ -39,7 +39,8 @@ int main(){
             processed[son]=true;
          }
       }
-   }cout << endl;
+   }
+   cout << endl;
 
    return 0;
 }
